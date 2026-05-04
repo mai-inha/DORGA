@@ -1,0 +1,43 @@
+data:
+  meta_csv: "brixia/brixia_meta.csv"
+  original_dir: "brixia/original"
+  normalized_dir: "brixia/Normalize"
+  label_cols: ["brixia1", "brixia2", "brixia3", "brixia4", "brixia5", "brixia6"]
+  train_splits: ["train", "valid"]
+  test_split: "consensus_test"
+  batch_size: 64
+
+model:
+  backbone:
+    checkpoint: "assets/weights/MRM.pth"
+    num_classes: 4
+    in_chans: 1
+    drop_path_rate: 0.1
+  num_regions: 6
+  num_classes: 4
+  num_patterns: 7
+  proj_dim: 768
+  gnn_num_heads: 4
+  gnn_dropout: 0.1
+
+training:
+  epochs: 100
+  freeze_blocks: 6
+  loss_func_stage3: "RoiClass"
+  prior_smoothing: 0.05
+  plot_every: 1
+
+preprocessing:
+  segmentation:
+    weights: "assets/weights/seg_weights.pt"
+    input_size: 1024
+  alignment:
+    weights: "assets/weights/stn_weights.pth"
+    input_size: 512
+    identity_gate_threshold: 0.01
+
+inference:
+  checkpoint: "assets/weights/DORGA_Brixia.pth"
+
+output:
+  run_dir: "runs"

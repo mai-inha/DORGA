@@ -1,0 +1,49 @@
+data:
+  meta_csv: "privateh/privateh_meta.csv"
+  original_dir: "privateh/original"
+  normalized_dir: "privateh/Normalize"
+  label_cols: ["severity1", "severity2", "severity3", "severity4"]
+  train_splits: ["train", "valid"]
+  test_split: "test"
+  batch_size: 64
+
+model:
+  backbone:
+    checkpoint: "assets/weights/MRM.pth"
+    num_classes: 5
+    in_chans: 1
+    drop_path_rate: 0.1
+  num_regions: 4
+  num_classes: 5
+  num_patterns: 7
+  proj_dim: 768
+  gnn_num_heads: 4
+  gnn_dropout: 0.1
+
+preprocessing:
+  segmentation:
+    weights: "assets/weights/seg_weights.pt"
+    input_size: 1024
+  alignment:
+    weights: "assets/weights/stn_weights.pth"
+    input_size: 512
+    identity_gate_threshold: 0.01
+
+training:
+  epochs: 100
+  freeze_blocks: 6
+  loss_func_stage3: "RoiClass"
+  prior_smoothing: 0.05
+  plot_every: 1
+
+inference:
+  checkpoint: "assets/weights/DORGA_PrivateH.pth"
+  roi_mode: "4roi"
+  roi_boxes:
+    - [0.0, 0.0, 0.5, 0.5]
+    - [0.5, 0.0, 1.0, 0.5]
+    - [0.0, 0.5, 0.5, 1.0]
+    - [0.5, 0.5, 1.0, 1.0]
+
+output:
+  run_dir: "runs"
