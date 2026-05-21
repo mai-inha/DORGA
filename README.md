@@ -290,19 +290,6 @@ DORGA/
 └── LICENSE
 ```
 
-## Citation
-
-```bibtex
-@inproceedings{jeong2026dorga,
-  title={Decoupled Ordinal Refinement with Geometric Alignment for Chest X-ray Severity Scoring},
-  author={Jeong, Geon and Kim, Jung Soo and Lee, Hyun Gyu},
-  booktitle={Medical Image Computing and Computer Assisted Intervention -- MICCAI 2026},
-  series={Lecture Notes in Computer Science},
-  publisher={Springer},
-  year={2026}
-}
-```
-
 ## References
 
 - [1] Signoroni et al., "BS-Net: Learning COVID-19 pneumonia severity on a large CXR dataset," Med. Image Anal. 71, 2021
