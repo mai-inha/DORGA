@@ -2,11 +2,11 @@
 
 **Decoupled Ordinal Refinement with Geometric Alignment for Chest X-ray Severity Scoring**
 
-> Under review
+> MICCAI 2026 (Early Accept)
 
 ## Highlights
 
-- **Average MAE 0.301** on Brixia consensus test set (vs. 0.441 BS-Net, 0.350 PAFE)
+- **Average MAE 0.301** on Brixia consensus test set (vs. 0.424 BS-Net, 0.350 PAFE)
 - **QWK 0.797** with senior radiologist on external Cohen dataset, matching inter-rater agreement (0.790)
 - Addresses **ordinal geometry collapse** -- the compounding interaction of Neural Collapse and Minority Collapse in multi-region ordinal settings
 
@@ -95,7 +95,7 @@ Independent learnable temperatures for Stage 2 (u) and Stage 3 (h) classifiers. 
 ## Installation
 
 ```bash
-git clone https://github.com/anonymous/DORGA.git
+git clone https://github.com/mai-inha/DORGA.git
 cd DORGA
 pip install -e .
 ```
@@ -293,10 +293,13 @@ DORGA/
 ## Citation
 
 ```bibtex
-@article{dorga2025,
+@inproceedings{jeong2026dorga,
   title={Decoupled Ordinal Refinement with Geometric Alignment for Chest X-ray Severity Scoring},
-  author={Anonymous},
-  year={2025}
+  author={Jeong, Geon and Kim, Jung Soo and Lee, Hyun Gyu},
+  booktitle={Medical Image Computing and Computer Assisted Intervention -- MICCAI 2026},
+  series={Lecture Notes in Computer Science},
+  publisher={Springer},
+  year={2026}
 }
 ```
 
