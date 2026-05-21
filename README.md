@@ -2,8 +2,6 @@
 
 **Decoupled Ordinal Refinement with Geometric Alignment for Chest X-ray Severity Scoring**
 
-> MICCAI 2026 (Early Accept)
-
 ## Highlights
 
 - **Average MAE 0.301** on Brixia consensus test set (vs. 0.424 BS-Net, 0.350 PAFE)
